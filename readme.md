@@ -1,8 +1,3 @@
----
-title: "NFL Predictor"
-tags: "nfl, football, python, predictor"
----
-
 # NFL Predictor
 
 NFL Predictor is a work-in-progress project by Katherine Gan and David Sun that uses [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) to scrape over the last twenty years and create a machine learning model that predicts NFL games.
