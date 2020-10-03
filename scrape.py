@@ -21,5 +21,5 @@ def generate_csv(type, year, categories):
         if len(row) != 0:
             rows.append(row)
 
-    df = pd.DataFrame(data=rows, columns=categories)
+    df = pd.DataFrame(data = rows, columns = categories)
     df.to_csv('data/' + str(year) + type + '_player_totals.csv', encoding='utf-8')

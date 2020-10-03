@@ -1,11 +1,11 @@
 import scrape
 
-years = range(2010, 2021)
+years = range(2000, 2021)
 
 
 passing_categories = ['player', 'team', 'pos', 'pass_cmp', 'pass_att', 'pass_cmp_perc', 'pass_yds', 
                   'pass_td', 'pass_td_perc', 'pass_int', 'pass_int_perc', 'pass_first_down', 'pass_yds_per_att',
-                  'pass_adj_yds_per_att', 'pass_yds_per_cmp', 'pass_yds_per_g', 'pass_rating', 'qbr', 'pass_sacked',
+                  'pass_adj_yds_per_att', 'pass_yds_per_cmp', 'pass_yds_per_g', 'pass_rating', 'pass_sacked',
                   'pass_sacked_yds', 'pass_net_yds_per_att', 'pass_adj_net_yds_per_att', 'pass_sacked_perc', 'comebacks',
                   'gwd']
 
