@@ -6,9 +6,9 @@ import requests
 
 def generate_csv(type, year, categories):
     url = "https://www.pro-football-reference.com/years/" + str(year) + "/" + type + ".htm"
-    data = requests.get(url).text
-    soup = BeautifulSoup(data, 'html.parser')
-    tbody = soup.find('tbody')
+    url_data = requests.get(url).text
+    bs = BeautifulSoup(url_data, 'html.parser')
+    tbody = bs.find('tbody')
 
     rows = []
     for i in tbody.find_all('tr'):
@@ -23,3 +23,18 @@ def generate_csv(type, year, categories):
 
     df = pd.DataFrame(data = rows, columns = categories)
     df.to_csv('data/' + str(year) + type + '_player_totals.csv', encoding='utf-8')
+
+def generate_box_scores_list(year):
+    url = "https://www.pro-football-reference.com/years/" + str(year) + "/games.htm"
+    url_data = requests.get(url).text
+    bs = BeautifulSoup(url_data, 'html.parser')
+    tbody = bs.find('tbody')
+
+    box_scores_list = []
+    for i in tbody.find_all('tr'):
+        for j in i.find_all('td'):
+            if j.attrs['data-stat'] == 'boxscore_word':
+                if j.find('a') != None:
+                    box_scores_list.append('https://www.pro-football-reference.com' + j.find('a').attrs['href'])
+
+    return box_scores_list

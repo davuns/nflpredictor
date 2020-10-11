@@ -30,3 +30,6 @@ for i in years:
     scrape.generate_csv("scrimmage", i, scrimmage_categories)
     scrape.generate_csv("opp", i, defense_categories)
     scrape.generate_csv("kicking", i, kicking_categories)
+
+box_scores_list = scrape.generate_box_scores_list('2019')
+print(box_scores_list)
